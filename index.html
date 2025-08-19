@@ -17,7 +17,6 @@
   <style>
     body{
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      /* cale absolută ca să meargă din orice rută */
       background: url('/gradient-bg.png') center / cover no-repeat fixed;
       color:#111;
     }
@@ -35,32 +34,37 @@
         <span class="whitespace-nowrap">Free Trial de 7 zile</span>
       </h1>
 
-      <p class="mt-6 text-[18px] text-black/80 max-w-2xl mx-auto">
+      <p class="mt-6 text-[18px] text-black/80 leading-relaxed max-w-2xl mx-auto">
         Completați formularul de mai jos pentru a testa agentul nostru de email timp de 7 zile gratuit.
       </p>
 
-      <form id="trial-form" action="/api/trial" method="POST" class="mt-8 space-y-4 max-w-xl mx-auto">
-        <input
-          type="email" name="email" placeholder="Adresă de email" required
-          class="w-full rounded-xl px-4 py-3 bg-white/80 border border-black/20
-                 placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-[#FFD633]
-                 focus:border-transparent transition"
-        >
-        <input
-          type="text" name="company" placeholder="Numele companiei" required
-          class="w-full rounded-xl px-4 py-3 bg-white/80 border border-black/20
-                 placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-[#FFD633]
-                 focus:border-transparent transition"
-        >
-        <button
-          type="submit"
-          class="w-full rounded-xl py-3 font-semibold bg-[#FFD633] text-black
-                 hover:bg-[#f2cf4a] transition shadow-lg"
-        >Free Trial</button>
-      </form>
+      <!-- CARD brun ca în mockup -->
+      <div class="mt-8 max-w-2xl mx-auto rounded-[28px] bg-[#6B4E2E]/35 p-6 md:p-8
+                  shadow-[0_10px_30px_rgba(0,0,0,.18)] backdrop-blur-[2px]">
+        <form id="trial-form" action="/api/trial" method="POST" class="space-y-4">
+          <input
+            type="email" name="email" placeholder="Adresă de email" required
+            class="w-full rounded-2xl px-5 py-4 bg-[#6B4E2E]/45 border border-transparent
+                   text-white placeholder-white/85 focus:outline-none focus:ring-2
+                   focus:ring-[#FFD633] focus:border-transparent transition"
+          >
+          <input
+            type="text" name="company" placeholder="Numele companiei" required
+            class="w-full rounded-2xl px-5 py-4 bg-[#6B4E2E]/45 border border-transparent
+                   text-white placeholder-white/85 focus:outline-none focus:ring-2
+                   focus:ring-[#FFD633] focus:border-transparent transition"
+          >
+          <button
+            type="submit"
+            class="w-full rounded-2xl py-4 text-2xl font-semibold bg-[#FFD633] text-black
+                   hover:bg-[#f2cf4a] transition shadow-[0_8px_18px_rgba(0,0,0,.15)]"
+          >Free Trial</button>
+        </form>
+      </div>
     </section>
   </main>
 
+  <!-- JS -->
   <script>
   (function () {
     const form = document.getElementById('trial-form');
@@ -95,5 +99,3 @@
   </script>
 </body>
 </html>
-
-
